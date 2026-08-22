@@ -14,6 +14,7 @@ from typing import Optional
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from jobs import create_job, get_job, job_events_after, list_jobs
@@ -130,3 +131,11 @@ def _apply_keys(keys: dict):
     for k, v in keys.items():
         if v:
             os.environ[k] = v
+
+
+# Serve the built frontend (frontend/out -> backend/static) at the root,
+# after the /api and /ws routes so they keep priority. Tolerates absence
+# so the API still works without the frontend build.
+STATIC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
+if os.path.isdir(STATIC_DIR):
+    app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")
