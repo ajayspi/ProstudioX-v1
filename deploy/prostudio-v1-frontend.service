@@ -1,0 +1,15 @@
+[Unit]
+Description=Prostudio v1 - Next.js frontend
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/prostudio-v1/frontend
+ExecStart=/usr/bin/npm start -- -p 3000
+Restart=always
+RestartSec=3
+Environment=NODE_ENV=production
+Environment=PORT=3000
+
+[Install]
+WantedBy=multi-user.target
