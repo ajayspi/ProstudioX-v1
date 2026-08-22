@@ -19,7 +19,7 @@ Pillow>=10.0.0
 numpy>=1.24.0
 
 # === Video/audio assembly (ffmpeg is driven via subprocess) ===
-ffmpeg-python>=0.2.1
+ffmpeg-python>=0.2.0
 
 # === Backend (Supabase) ===
 supabase>=2.0.0
