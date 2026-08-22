@@ -1,0 +1,6 @@
+# Prostudio v1 — FastAPI backend
+# Includes the vendored pipeline deps (pipeline/requirements.txt)
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+-r pipeline/requirements.txt

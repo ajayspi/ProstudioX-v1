@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.env
+
+# Backend generated videos
+backend/outputs/
+
+# Node
+node_modules/
+.next/
+out/
+.env.local
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.log
