@@ -23,6 +23,7 @@ export interface GeneratePayload {
   motion_prompt: string;
   music_volume: number;
   openai_model: string;
+  use_supabase: boolean;
   keys: Record<string, string>;
 }
 

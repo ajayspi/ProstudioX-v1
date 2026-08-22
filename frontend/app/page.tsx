@@ -79,6 +79,7 @@ interface FormState {
   motion_prompt: string;
   music_volume: number;
   openai_model: string;
+  use_supabase: boolean;
 }
 
 const DEFAULTS: FormState = {
@@ -96,6 +97,7 @@ const DEFAULTS: FormState = {
   motion_prompt: "",
   music_volume: 0.15,
   openai_model: "gpt-4o-mini",
+  use_supabase: false,
 };
 
 function Section({
@@ -408,6 +410,23 @@ export default function Page() {
                     </Field>
                   </div>
                 )}
+              </Section>
+
+              <Separator />
+
+              <Section title="Storage">
+                <div className="flex items-center justify-between rounded-md border p-3">
+                  <div className="space-y-0.5">
+                    <Label>Save to Supabase</Label>
+                    <p className="text-xs text-muted-foreground">
+                      Upload the finished video and record it in your Supabase project.
+                    </p>
+                  </div>
+                  <Switch
+                    checked={form.use_supabase}
+                    onCheckedChange={(v) => update({ use_supabase: v })}
+                  />
+                </div>
               </Section>
 
               <Separator />
