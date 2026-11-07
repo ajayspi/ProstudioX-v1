@@ -1,5 +1,7 @@
 # ProstudioX-v1
 
+![Pro Studio X - running app UI](docs/screenshots/pro-studio-x.jpg)
+
 <!-- about-me -->
 ## About me
 
